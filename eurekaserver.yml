@@ -1,0 +1,11 @@
+server:
+  port: 8070
+
+eureka:
+  instance:
+    hostname: localhost
+  client:
+    fetchRegistry: false #As fetchRegistry is not hitting services(accounts,loans ..etc) it will remain false
+    registerWithEureka: false #-This is a eureka server, so it shoould not register itself
+    serviceUrl:
+      defaultZone: http://${eureka.instance.hostname}:${server.port}/eureka/
